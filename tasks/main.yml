@@ -1,0 +1,18 @@
+---
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Install Metricbeat.
+  package: name=metricbeat state=present
+
+- include: config.yml
+  when: metricbeat_create_config
+
+- name: Ensure Filebeat is started and enabled at boot.
+  service:
+    name: metricbeat
+    state: started
+    enabled: yes
