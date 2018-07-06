@@ -45,9 +45,14 @@ None
 ## Add options for adding tags and additional fields
 
     metricbeat_tags:
+      - service-x
+      - web-tier
     metricbeat_fields:
+      env: staging
+      system: app
     metricbeat_fields_under_root:false
 
+Note that for fields the values are sub-elements, and not list items
 
 ## Added following SSL options for the generated metricbeat.yml file, for which there are no defaults provided:
 
