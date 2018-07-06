@@ -4,6 +4,18 @@ metricbeat.modules:
  
   {{ metricbeat_modules | to_json }}
 
+
+# Tags and Fields
+{% if metricbeat_tags %}
+  {{ metricbeat_tags | to_json }}
+{% endif %}
+{% if metricbeat_fields %}
+  {{ metricbeat_fields | to_json }}
+{% endif %}
+{% if metricbeat_fields_under_root %}
+fields_under_root={{ metricbeat_fields_under_root }}
+{% endif %}
+
 # Configure what outputs to use when sending the data collected by the beat.
 # Multiple outputs may be used.
 output:
