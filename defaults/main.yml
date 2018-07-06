@@ -26,7 +26,7 @@ metricbeat_modules:
 
 metricbeat_tags:
 metricbeat_fields:
-metricbeat_fields_under_root:false
+metricbeat_fields_under_root: false
 
 metricbeat_output_elasticsearch_enabled: false
 metricbeat_output_elasticsearch_hosts:
