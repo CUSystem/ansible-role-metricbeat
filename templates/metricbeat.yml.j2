@@ -10,7 +10,7 @@ metricbeat.modules:
 tags: {{ metricbeat_tags | to_json }}
 {% endif %}
 {% if metricbeat_fields %}
-fields: {{ metricbeat_fields }}
+fields: {{ metricbeat_fields | to_json }}
 {% endif %}
 {% if metricbeat_fields_under_root %}
 fields_under_root: {{ metricbeat_fields_under_root }}
