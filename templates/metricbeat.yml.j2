@@ -6,7 +6,7 @@ metricbeat.modules:
 
 
 # Tags and Fields
-{ if metricbeat_tags %}
+{% if metricbeat_tags %}
 tags: {{ metricbeat_tags | to_json }}
 {% endif %}
 {% if metricbeat_fields %}
